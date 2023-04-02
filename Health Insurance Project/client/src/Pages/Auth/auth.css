@@ -3,16 +3,18 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size:cover ;
-    position: absolute;
-    top: 50px;
-    bottom: 0;
-    right: 0;
-    left: 0;
-}
-.auth-box{
+    position: relative;
     display: flex;
     justify-content: center;
-    margin-top: 50px;
+    height: 90vh;
+}
+.auth-box{
+    /* display: flex; */
+    /* justify-content: center; */
+    position: relative;
+    text-align: center;
+    top: 50px;
+    max-height: 500px;
 }
 .login-form{
     background-color: white;
