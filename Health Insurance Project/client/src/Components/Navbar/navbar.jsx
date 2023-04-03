@@ -1,8 +1,15 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import { Link } from 'react-router-dom'
+import { useSelector, useDispatch } from 'react-redux';
+import setcurrentUser from '../../actions/currentUser';
 
-const navbar = () => {
-    const user = null;
+const Navbar = () => {
+  const dispatch = useDispatch();
+    const user = useSelector( (state) =>(state.currentUserReducer))
+    
+    useEffect( () => {
+      dispatch(setcurrentUser(JSON.parse(localStorage.getItem('Profile'))))
+    },[dispatch])
   return (
     <div className='navbar-container' style={{minHeight:'50px', borderBottom:'3px solid black'}}>
         <div className="navbar">
@@ -23,4 +30,4 @@ const navbar = () => {
   )
 }
 
-export default navbar
+export default Navbar
