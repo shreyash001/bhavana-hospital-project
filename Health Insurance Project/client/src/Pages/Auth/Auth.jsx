@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useEffect, useState} from 'react'
 import {useDispatch} from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import "./auth.css"
@@ -12,6 +12,10 @@ const Auth = () => {
 
     const dispatch = useDispatch();
     const navigate =  useNavigate();
+
+    useEffect( () => {
+        
+    })
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -49,7 +53,7 @@ const Auth = () => {
                 
                 {!isSignup ? (<><p>Don't have an account</p></>):(<><p>Already have an account </p></>)}
                 <button type='button' className='login-singup-btn' style={{width:"70px", margin:"10px"}}
-                    onClick={()=>setIsSignup(!isSignup)}>{!isSignup ? "Login":"SignUp"}</button>
+                    onClick={()=>setIsSignup(!isSignup)}>{!isSignup ? "SignUp":"Login"}</button>
             </form>
         </div>
         
