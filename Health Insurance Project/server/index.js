@@ -14,7 +14,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/users",userRouter)
-// app.use("/insurance",insuranceRouter)
+app.use("/insurance",insuranceRouter)
 
 const CONNECTION_URL = "mongodb+srv://admin:admin@cluster0.iqslqdn.mongodb.net/?retryWrites=true&w=majority";
 const PORT = 5000;

@@ -23,13 +23,22 @@ const Insurance = () => {
     { value: '3', label: 'EMI 3' },
   ]
 
+  const [name,setName] = useState('')
+  const [insuranceType,setInsuranceType] = useState('')
+  // const [govId,setGovId] = useState('')
+  // const [insuranceEMI,setInsuranceEMI] = useState('')
+  const [insurance,setInsurance] = useState('')
+  const [insuranceTypeValue,setInsuranceTypeValue] = useState('')
+  const [insuranceEMIValue,setInsuranceEMIValue] = useState('')
+  const [date,setDate] = useState('')
+
+
   const navigate = useNavigate();
 
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('submit')
-    navigate("/")
+    console.log(date)
   }
 
   return (
@@ -38,14 +47,16 @@ const Insurance = () => {
       <form onSubmit={handleSubmit}>
         <label htmlFor='name' ><h3>Name</h3></label>
         <p>Enter your Full Name as per Addhar.</p>
-        <input type="text" id='name' name='name' placeholder='Enter your full name'/>
+        <input type="text" id='name' name='name' onChange={(e) => setName(e.target.value)} placeholder='Enter your full name'/>
 
         <label htmlFor="dob"><h3>Date Of Birth</h3></label>
         <p>Enter your DOB according to your Addhar.(mm/dd/yyyy)</p>
-        <input type="date"/>
+        <input type="date" onChange={(e) => setDate(e.target.valueAsDate)}/>
         <label htmlFor="personalDetail"><h4>Personal Details</h4></label>
         <input type="text" placeholder='Enter height in cm'/>
         <input type="text" placeholder='Enter weight in Kg'/>
+        <input type="text" placeholder='Gender' />
+        <input type="number" placeholder='Enter PhoneNo.' />
 
 
         <label htmlFor="address"><h3>Addresss</h3></label>

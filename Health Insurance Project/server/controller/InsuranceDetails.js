@@ -1,10 +1,10 @@
-const Insurance = require("../models/insurance.model.js")
+const UserInformation = require("../models/insurance.model.js")
 const mongoose = require("mongoose")
 
 
 const addUserInsuranceDetails = async(req,res) => {
     const insuranceData = req.body;
-    const insuranceDetails = new Insurance(insuranceData);
+    const insuranceDetails = new UserInformation({...insuranceData, userId:req.userId});
 
     try {
         await insuranceDetails.save();
