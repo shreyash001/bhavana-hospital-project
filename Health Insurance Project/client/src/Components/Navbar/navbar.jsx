@@ -5,10 +5,10 @@ import setcurrentUser from '../../actions/currentUser';
 
 const Navbar = () => {
   const dispatch = useDispatch();
-    const user = useSelector( (state) =>(state.currentUserReducer))
+    const user = useSelector( (state) =>(state.currentUserReducer));
     
     useEffect( () => {
-      dispatch(setcurrentUser(JSON.parse(localStorage.getItem('Profile'))))
+      dispatch(setcurrentUser(JSON.parse(localStorage.getItem('Profile'))));
     },[dispatch])
   return (
     <div className='navbar-container' style={{minHeight:'50px', borderBottom:'3px solid black'}}>
@@ -27,6 +27,7 @@ const Navbar = () => {
         </div>
         
     </div>
+
   )
 }
 
